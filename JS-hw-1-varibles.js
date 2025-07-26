@@ -60,8 +60,8 @@ item_6 = 15;
 item_6_type = typeof item_6;
 
 // #21
-console.log(`item_6 == ${item_6}, item_6_type == ${item_6_type}`);
-console.log('item_6 == ' + item_6 + ', item_6_type == ' + item_6_type);
+console.log(`item_6 == ${typeof item_6}, item_6_type == ${typeof item_6_type}`);
+console.log('item_6 == ' + typeof item_6 + ', item_6_type == ' + typeof item_6_type);
 
 // #22
 let item_7 = String(item_6);
@@ -73,13 +73,32 @@ let item_7_type;
 item_7_type = typeof item_7;
 
 // #25
-console.log(`item_7 == ${item_7}, item_7_type == ${item_7_type}`);
-console.log('item_7 == ' + item_7 + ', item_7_type == ' + item_7_type);
+console.log(`item_7 == ${typeof item_7}, item_7_type == ${typeof item_7_type}`);
+console.log('item_7 == ' + typeof item_7 + ', item_7_type == ' + typeof item_7_type);
 
 /* TASK 2 */
 const randomNumber = 5;
+// v1
 console.log(
   randomNumber +
     Number(String(randomNumber) + String(randomNumber)) +
     Number(String(randomNumber) + String(randomNumber) + String(randomNumber)),
+);
+
+// v2
+console.log(
+  randomNumber +
+    Number(String(randomNumber) + randomNumber) +
+    Number(String(randomNumber) + randomNumber + randomNumber),
+);
+
+// v3
+const modifiedNumber = randomNumber.toString();
+console.log(
+  randomNumber + Number(modifiedNumber + modifiedNumber) + Number(modifiedNumber + modifiedNumber + modifiedNumber),
+);
+
+// v4
+console.log(
+  randomNumber + Number('' + randomNumber + randomNumber) + Number('' + randomNumber + randomNumber + randomNumber),
 );
