@@ -14,9 +14,7 @@ let age = 'asd';
 if (!isNaN(age)) {
   age = Number(age);
 
-  if (typeof age !== 'number') {
-    console.log('Incorrect data type');
-  } else if (age < minAge) {
+  if (age < minAge) {
     console.log("You don't have access cause your age is " + age + " It's less then ");
   } else if (age >= minAge && age < maxAge) {
     console.log('Welcome!');
