@@ -6,6 +6,12 @@
 
 let evenNumbersResult = '';
 
+for (let i = 10; i >= 0; i--) {
+  if (i % 2 === 0) {
+    evenNumbersResult += i ? i + '-' : i;
+  }
+}
+
 /**
  * Создать строку из 5 строк с увеличивающимся количеством смайликов ":)".
  * Переменная для результата `smilePatternResult` уже создана и содержит пустую строку.
@@ -19,6 +25,10 @@ let evenNumbersResult = '';
 
 let smilePatternResult = '';
 
+for (let i = 1; i <= 5; i++) {
+  smilePatternResult += i === 5 ? ':)'.repeat(i) : ':)'.repeat(i) + '\n';
+}
+
 /**
  * Заменить все пробелы в переменной text на "1".
  * Переменная для результата `replaceSpacesWithOneResult` уже создана и содержит пустую строку.
@@ -26,5 +36,7 @@ let smilePatternResult = '';
  */
 const text = 'Hello! I am a JS student!';
 let replaceSpacesWithOneResult = '';
+
+replaceSpacesWithOneResult = text.replaceAll(' ', '1');
 
 export { evenNumbersResult, smilePatternResult, replaceSpacesWithOneResult };
