@@ -6,12 +6,15 @@
 const word = 'hello';
 let vowelsAndConsonantsResult = '';
 
-const vowelsList = ['a', 'e', 'i', 'o', 'u'];
+const vowelsList = 'aeiou';
+const consonantsList = 'bcdfghjklmnpqrstvwxyz';
 let vowels = 0;
+let consonants = 0;
 
 for (const x of word.toLowerCase()) {
     vowelsList.includes(x) ? vowels++ : vowels
+    consonantsList.includes(x) ? consonants++ : consonants
 }
-vowelsAndConsonantsResult = `${word} contains ${vowels} vowels and ${word.length - vowels} consonants`
+vowelsAndConsonantsResult = `${word} contains ${vowels} vowels and ${consonants} consonants`
 
 export { vowelsAndConsonantsResult };
