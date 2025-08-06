@@ -24,10 +24,12 @@ function pizzas(competitorPizzas, myPizzas) {
   const competitorLower = competitorPizzas.map(p => p.toLowerCase());
 
   for (const x of myPizzas) {
-    competitorLower.includes(x.toLowerCase()) ? result : result.push(x);
+    if (!competitorLower.includes(x.toLowerCase())) {
+       result.push(x);
+     }
   }
   
-  !!result.length ? resultUnique = result : resultNull = null
+  return result.length ? resultUnique = result : resultNull = null
 }
 
 pizzas(competitorPizzas, myPizzasT1)
