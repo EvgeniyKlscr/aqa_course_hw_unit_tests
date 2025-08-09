@@ -25,11 +25,10 @@ function digitalRoot(number) {
 another solution
 
 function digitalRoot2(number) {
-  let num = number.toString().split('').reduce((acc, x) => acc + +x, 0)
   do {
-    num = num.toString().split('').reduce((acc, x) => acc + +x, 0)
-  } while (num > 9)
-   return num
+    number = number.toString().split('').reduce((acc, x) => acc + +x, 0)
+  } while (number > 9)
+   return number
 }
 */
 
