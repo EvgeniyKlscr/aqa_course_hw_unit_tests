@@ -9,7 +9,28 @@
 */
 
 function digitalRoot(number) {
-  // Ваш код
+  if (number === 0) return 0
+  if (number < 10) {
+    return number
+  } else {
+    let sum = 0
+    for (const x of number.toString().split('').map((x) => +x)) {
+      sum += x
+    }
+    return digitalRoot(sum)
+  }
 }
+
+/*
+another solution
+
+function digitalRoot2(number) {
+  let num = number.toString().split('').reduce((acc, x) => acc + +x, 0)
+  do {
+    num = num.toString().split('').reduce((acc, x) => acc + +x, 0)
+  } while (num > 9)
+   return num
+}
+*/
 
 export { digitalRoot };
