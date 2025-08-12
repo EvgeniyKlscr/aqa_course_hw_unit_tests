@@ -17,6 +17,8 @@ const words = [
   'environment',
   'queue',
 ];
+/*
+// first solution
 
 function sortedByVowels(wordsArr) {
   const vowelsList = 'aeiou';
@@ -49,5 +51,19 @@ function sortedByVowels(wordsArr) {
     return 0;
   });
 }
+ */
 
+// second solution
+
+function sortedByVowels(wordsArr) {
+  const vowelsList = 'aeiou';
+  const countVowels = (word) => {
+    return word.split('').reduce((acc, x) => {
+      if (vowelsList.includes(x)) acc++;
+      return acc;
+    }, 0);
+  };
+
+  return wordsArr.sort((a, b) => countVowels(a) - countVowels(b));
+}
 export { sortedByVowels };
