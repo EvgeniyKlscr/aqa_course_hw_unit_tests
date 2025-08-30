@@ -83,7 +83,7 @@ class Company {
     if (
       employee instanceof Employee &&
       this.#employees.every(
-        (item) => `${item.firstName} ${item.lastName}` !== `${employee.firstName} ${employee.lastName}`,
+        (item) => item.getFullName() !== employee.getFullName(),
       )
     )
       this.#employees.push(employee);
