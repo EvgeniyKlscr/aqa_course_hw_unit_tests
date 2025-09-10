@@ -27,17 +27,19 @@ function promiseNumber(number) {
   return new Promise((resolve) => resolve(number));
 }
 
-Promise.all([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
+const arrayOfPromises = [promiseNumber(1), promiseNumber(2), promiseNumber(3)]
+
+Promise.all(arrayOfPromises)
   .then((result) => result.forEach((res) => console.log(res)))
   .catch((rej) => console.log(rej));
 
-Promise.allSettled([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
+Promise.allSettled(arrayOfPromises)
   .then((result) => result.forEach((res) => console.log(res)))
   .catch((rej) => console.log(rej));
 
 async function promAll() {
   try {
-    const result = await Promise.all([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
+    const result = await Promise.all(arrayOfPromises)
       result.forEach((res) => console.log(res))
   } catch (error) {
     console.log(error);
@@ -47,7 +49,7 @@ promAll()
 
 async function promAllSettled() {
   try {
-    const result = await Promise.allSettled([promiseNumber(1), promiseNumber(2), promiseNumber(3)])
+    const result = await Promise.allSettled(arrayOfPromises)
       result.forEach((res) => console.log(res))
   } catch (error) {
     console.log(error);
