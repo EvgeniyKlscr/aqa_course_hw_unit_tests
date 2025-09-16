@@ -7,9 +7,9 @@
    map([1,2,3,4,5], callback) => [0,2,6,12,20]
 */
 
-type Map<T, U> = (item: T, index: number, array: T[]) => U;
+type MapCallback<T, U> = (item: T, index: number, array: T[]) => U;
 
-function map<T, U>(array: T[], callback: Map<T, U>): U[] {
+function map<T, U>(array: T[], callback: MapCallback<T, U>): U[] {
   let res: U[] = [];
 
   for (let i = 0; i < array.length; i++) {
