@@ -14,8 +14,7 @@ function validatePassword(password: string): boolean {
   const hasLower = /[a-z]/.test(password)
   const hasDigit = /[0-9]/.test(password)
   const spaceInPassword = password.trim() !== '';
-  if (hasUpper && hasLower && hasDigit && password.length >= 8 && spaceInPassword) return true;
-  else return false;
+  return hasUpper && hasLower && hasDigit && password.length >= 8 && spaceInPassword
 }
 
 const passwords = [
